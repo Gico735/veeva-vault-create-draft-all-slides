@@ -1,6 +1,11 @@
+#!/usr/bin/env node
 const request = require("request");
 
 let [server, idPres, token] = process.argv.slice(2);
+
+if (server ===undefined) return  console.log('YOU FORGET ADD SERVER')
+if (idPres ===undefined) return  console.log('YOU FORGET ADD idPres')
+if (token ===undefined) return  console.log('YOU FORGET ADD token')
 
 server = `https://${server}.veevavault.com/api/v19.3/`;
 token = "Bearer " + token;
