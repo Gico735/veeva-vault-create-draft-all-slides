@@ -3,10 +3,17 @@ const request = require("request");
 
 let [server, idPres, token] = process.argv.slice(2);
 
-if (server ===undefined) return  console.log('YOU FORGET ADD SERVER')
-if (idPres ===undefined) return  console.log('YOU FORGET ADD idPres')
-if (token ===undefined) return  console.log('YOU FORGET ADD token')
+if (server === undefined || idPres === undefined || token === undefined) {
+ return console.log(`
+  USING:
+  veevadraft server idPres token
 
+  server - vv-agency-ololo
+  
+  idPres - 12416
+  
+  token - sessionStorage[USER.authToken]`);
+}
 server = `https://${server}.veevavault.com/api/v19.3/`;
 token = "Bearer " + token;
 
